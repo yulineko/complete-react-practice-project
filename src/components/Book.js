@@ -26,12 +26,21 @@ class Book extends React.Component {
     this.setState({
       comments: [...this.state.comments, this.state.newComment]
     })
+    this.setState({
+      newComment: ""
+    })
   }
 
   handleShowComments = () => {
-    
+    console.log("comments: ", this.state.comments.join(". "))
+    this.setState({
+      allComments: !this.state.allComments
+    })
   }
 
+  addToShelf = () => {
+    //add to shelf
+  }
   
 
   render(){
@@ -48,13 +57,13 @@ class Book extends React.Component {
     return (
       <div>
         <h2>{this.props.book.title}</h2>
-        <img src = {this.props.book.img} />
+        <img src = {this.props.book.img} onClick = {this.addToShelf}/>
         <br></br>
         <button onClick = {this.handleAddComment}>Add comment</button>
           {this.state.commentsForm ? commentForm : null} 
         <br></br>
         <button onClick = {this.handleShowComments}>Show comments</button>
-          {this.state.comments ? <ul>{this.state.comments.map(comment => <li>{comment}</li>)}</ul> : null}
+          {this.state.allComments ? <ul>{this.state.comments.map(comment => <li key = {comment}>{comment}</li>)}</ul> : null}
       </div>
     );
   }

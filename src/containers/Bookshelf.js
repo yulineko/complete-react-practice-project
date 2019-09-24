@@ -1,7 +1,8 @@
 import React from "react";
 import Book from "../components/Book";
 
-const Bookshelf = ({ books }) => {
+const Bookshelf = (props) => {
+  console.log("bookshelf props", props)
   return (
     <div>
       <h1>Book Shelf</h1>
