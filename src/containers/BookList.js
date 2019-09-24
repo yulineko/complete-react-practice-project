@@ -16,13 +16,21 @@ class BookList extends Component {
       }))
   }
 
+  addBook = (book) => {
+    this.setState({
+      books: [book, ...this.state.books]
+    })
+  }
+
   render(){
     console.log(this.state.books)
     let books = this.state.books.map(bookObj => <Book key = {bookObj.id} book = {bookObj}/>)
     return (
       <div className="book-list">
         <h1>Book List</h1>
-        <Form />
+
+        <Form handleSubmit = {this.addBook}/>
+
         <ul>{books}</ul>
       </div>
     );
