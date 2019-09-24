@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "../components/Form";
 import Book from "../components/Book"
+// import SearchForm from "../components/SearchForm"
 
 class BookList extends Component {
 
@@ -22,9 +23,10 @@ class BookList extends Component {
     })
   }
 
+
   render(){
-    console.log(this.state.books)
-    let books = this.state.books.map(bookObj => <Book key = {bookObj.id} book = {bookObj}/>)
+    // console.log(this.state.books)
+    let books = this.state.books.map(bookObj => <Book key = {bookObj.title} book = {bookObj}/>)
     return (
       <div className="book-list">
         <h1>Book List</h1>

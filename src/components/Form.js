@@ -19,7 +19,6 @@ class Form extends React.Component {
       title: "",
       img: ""
     })
-
   }
 
   render(){
