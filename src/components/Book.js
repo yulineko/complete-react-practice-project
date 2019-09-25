@@ -2,6 +2,7 @@ import React from "react";
 
 class Book extends React.Component {
   state = {
+    clicked: false,
     comments: [],
     newComment: "",
     commentsForm: false,
@@ -38,26 +39,27 @@ class Book extends React.Component {
     })
   }
 
-  addToShelf = () => {
-    //add to shelf
+  getBook = () => {
+    console.log(this.props.book)
+    this.props.handleClick(this.props.book)
   }
-  
+
 
   render(){
-    // console.log("Book props", this.props)
+    console.log("Book props", this.props)
     const commentForm = 
       <div>  
         <textarea name = "newComment" placeholder = "Add a new comment here" value = {this.state.newComment} onChange = {this.handleChange}/>
         <br></br>
         <button onClick = {this.handleCommentSubmit}>Submit</button>
       </div>
-
+    // make this its own file
     // console.log("comms: ", this.state.comments)
 
     return (
       <div>
         <h2>{this.props.book.title}</h2>
-        <img src = {this.props.book.img} onClick = {this.addToShelf}/>
+        <img src = {this.props.book.img} alt = {this.props.book.img} onClick = {this.getBook}/>
         <br></br>
         <button onClick = {this.handleAddComment}>Add comment</button>
           {this.state.commentsForm ? commentForm : null} 

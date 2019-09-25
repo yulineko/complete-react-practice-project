@@ -9,12 +9,17 @@ class App extends Component {
     shelf: []
   }
 
+  handleClick = (book) => {
+    this.setState({
+      shelf: [...this.state.shelf, book]
+    })
+  }
 
   render(){
     return (
       <div className="book-container">
-        <BookList />
-        <Bookshelf />
+        <BookList handleClick = {this.handleClick}/>
+        <Bookshelf book = {this.state.shelf}/>
       </div>
     );
   }
