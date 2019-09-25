@@ -46,7 +46,7 @@ class Book extends React.Component {
 
 
   render(){
-    console.log("Book props", this.props)
+    // console.log("Book props", this.props)
     const commentForm = 
       <div>  
         <textarea name = "newComment" placeholder = "Add a new comment here" value = {this.state.newComment} onChange = {this.handleChange}/>
@@ -59,7 +59,7 @@ class Book extends React.Component {
     return (
       <div>
         <h2>{this.props.book.title}</h2>
-        <img src = {this.props.book.img} alt = {this.props.book.img} onClick = {this.getBook}/>
+        <img src = {this.props.book.img} alt = {this.props.book.title} onClick = {this.getBook}/> 
         <br></br>
         <button onClick = {this.handleAddComment}>Add comment</button>
           {this.state.commentsForm ? commentForm : null} 

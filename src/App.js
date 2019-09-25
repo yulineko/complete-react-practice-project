@@ -15,11 +15,19 @@ class App extends Component {
     })
   }
 
+  handleRemove = (book) => {
+    let removeBook = this.state.shelf.filter(bookObj => bookObj.id !== book.id)
+    console.log("removing: ", removeBook)
+    this.setState({
+      shelf: removeBook
+    })
+  }
+
   render(){
     return (
       <div className="book-container">
         <BookList handleClick = {this.handleClick}/>
-        <Bookshelf book = {this.state.shelf}/>
+        <Bookshelf book = {this.state.shelf} handleClick = {this.handleRemove}/>
       </div>
     );
   }

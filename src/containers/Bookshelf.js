@@ -1,16 +1,23 @@
 import React from "react";
 import Book from "../components/Book";
 
-const Bookshelf = (props) => {
-  console.log("bookshelf props", props)
+class Bookshelf extends React.Component {
 
-  // let shelfBooks = props.book.map(shelfBookObj => <Book key = {shelfBookObj.title} shelfBook = {shelfBookObj}/>)
-  return (
-    <div>
-      <h1>Book Shelf</h1>
-      {/* <ul>{shelfBooks}</ul> */}
-    </div>
-  );
+
+  render(){
+    // console.log("bookshelf props", this.props.book)
+    // console.log("bookshelf props 2", this)
+
+    let books = this.props.book.map(bookObj => <Book key = {bookObj.title} shelfBook = {bookObj}/>)
+    console.log(books)
+    return (
+      <div>
+        <h1>Book Shelf</h1>
+        <ul>{books}</ul>
+      </div>
+    );
+  }
 };
+
 
 export default Bookshelf;

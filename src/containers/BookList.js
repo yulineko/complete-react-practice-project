@@ -25,8 +25,9 @@ class BookList extends Component {
 
 
   render(){
-    console.log("In booklist", this.state.books)
+    // console.log("In booklist", this.state.books)
     let books = this.state.books.map(bookObj => <Book key = {bookObj.title} book = {bookObj} handleClick = {this.props.handleClick}/>)
+    // make key book id when save to database
     return (
       <div className="book-list">
         <h1>Book List</h1>
