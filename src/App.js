@@ -11,7 +11,7 @@ class App extends Component {
 
   handleClick = (book) => {
     this.setState({
-      shelf: [...this.state.shelf, book]
+      shelf: [book, ...this.state.shelf]
     })
   }
 
