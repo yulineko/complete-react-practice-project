@@ -26,8 +26,11 @@ Then start the json-server:
 <!-- - When a User clicks the add comment button it should create a text box that allows the user to, optimistically, add a comment for that book
 - When a User clicks the show comment button it should show all comments for that book -->
 
-- Clicking on the book img in the Book List should add it to the Book Shelf
-- Clicking on a book img in the Book Shelf should remove it from the Book Shelf
-- Each book can only be added to Book Shelf one time (Book Shelf should not have duplicate books)
-- A User should be able to search Book Shelf for a book by title
+<!-- - Clicking on the book img in the Book List should add it to the Book Shelf -->
+<!-- - Clicking on a book img in the Book Shelf should remove it from the Book Shelf -->
+- Each book can only be added to Book Shelf one time (Book Shelf should not have duplicate books) 
+<!-- - A User should be able to search [Book Shelf] BOOKLIST for a book by title (can search book shelf after saving to database) -->
+(A User should be able to search [Book Shelf] BOOKLIST for a book by title (can search book shelf after saving to database))
+
+
 

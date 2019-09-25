@@ -4,7 +4,8 @@ const SearchForm = (props) => {
     return(
         <div>
             <h3>Search books</h3>
-            <input type = "text" placeholder = "Search value" value = {props.searchTerm} onChange = {props.handleSearch} />
+            <input type = "text" placeholder = "Search" value = {props.search} onChange = {props.handleSearch} />
+            <button>Search</button>
         </div>
     )
 }
